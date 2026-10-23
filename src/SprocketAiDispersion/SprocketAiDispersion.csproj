@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>Sprocket.AiDispersion</AssemblyName>
+    <RootNamespace>SprocketAiDispersion</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <DebugType>none</DebugType>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+
+    <!-- Compile-time BepInEx reference. The *runtime* loader for Sprocket must be
+         BepInEx be.788 plus the community compatibility patch (see get-bepinex.sh) - stock
+         BepInEx black-screens on this build. The APIs used here are identical between
+         be.788 and be.789, and BepInEx resolves plugin dependencies by name, so building
+         against either one is fine.                                                       -->
+    <BepInExVersion Condition="'$(BepInExVersion)' == ''">6.0.0-be.789</BepInExVersion>
+
+    <!-- BepInEx generates proxy assemblies for the game in BepInEx/interop the first time the
+         game is launched with the loader installed. The shell-dispersion patch uses typed
+         access to Sprocket.Projectiles, so those must exist before building. -->
+    <InteropDir Condition="'$(InteropDir)' == ''">$(HOME)/.local/share/Steam/steamapps/common/Sprocket/BepInEx/interop</InteropDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Core" Version="$(BepInExVersion)" ExcludeAssets="runtime" />
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="$(BepInExVersion)" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup Condition="Exists('$(InteropDir)')">
+    <Reference Include="Sprocket.Projectiles">
+      <HintPath>$(InteropDir)/Sprocket.Projectiles.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>$(InteropDir)/Il2Cppmscorlib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Sprocket.DamageModelFramework">
+      <HintPath>$(InteropDir)/Sprocket.DamageModelFramework.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>$(InteropDir)/Il2CppSystem.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(InteropDir)/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
