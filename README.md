@@ -10,8 +10,11 @@
 - [`Sprocket.AiDispersion-1.0.0.zip`](release/Sprocket.AiDispersion-1.0.0.zip) ← 同样内容，打包形式
 - 校验值：[`release/SHA256SUMS.txt`](release/SHA256SUMS.txt)
 
-> 点进去后按 **Download raw file**（或右键链接 → 另存为）。仓库里的这两个文件就是最新构建产物；
-> 版本发布时也会同步到右侧 **Releases**。
+**直接下载（点开即下）：**
+[`Sprocket.AiDispersion.dll`](https://github.com/hhosj/sprocket-ai-dispersion/raw/main/release/Sprocket.AiDispersion.dll) ·
+[`Sprocket.AiDispersion-1.0.0.zip`](https://github.com/hhosj/sprocket-ai-dispersion/raw/main/release/Sprocket.AiDispersion-1.0.0.zip)
+
+> 仓库里的这两个文件就是最新构建产物；版本发布时会同步到右侧 **Releases**。
 
 ## 它做了什么
 
