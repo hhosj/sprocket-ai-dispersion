@@ -19,7 +19,7 @@ if [[ ! -f "$HERE/third_party/BepInEx/core/BepInEx.Core.dll" || ! -f "$HERE/thir
   "$HERE/get-bepinex.sh"
 fi
 
-DLL="$HERE/dist/Sprocket.AiDispersion.dll"
+DLL="$HERE/release/Sprocket.AiDispersion.dll"
 if [[ ! -f "$DLL" ]]; then
   DLL="$HERE/src/SprocketAiDispersion/bin/Release/net6.0/Sprocket.AiDispersion.dll"
 fi

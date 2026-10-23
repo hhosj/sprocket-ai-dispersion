@@ -1,0 +1,2 @@
+cb33bfff1bdeb5a832e730890fe6e2e6eaed458e9709b4a96b9a4d83c4a7d444  Sprocket.AiDispersion-1.0.0.zip
+2497f28e7dba346a23b78ab4a2fd7ab9f58c6054122e726aa08ec6017b4dce86  Sprocket.AiDispersion.dll

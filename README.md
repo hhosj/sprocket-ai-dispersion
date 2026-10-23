@@ -4,6 +4,15 @@
 
 *A BepInEx plugin that gives Sprocket's AI gunners realistic shell dispersion instead of laser-like accuracy.*
 
+## 下载
+
+- **[`Sprocket.AiDispersion.dll`](release/Sprocket.AiDispersion.dll)** ← 单文件，Mod Manager 里 **Add mod** 直接选它
+- [`Sprocket.AiDispersion-1.0.0.zip`](release/Sprocket.AiDispersion-1.0.0.zip) ← 同样内容，打包形式
+- 校验值：[`release/SHA256SUMS.txt`](release/SHA256SUMS.txt)
+
+> 点进去后按 **Download raw file**（或右键链接 → 另存为）。仓库里的这两个文件就是最新构建产物；
+> 版本发布时也会同步到右侧 **Releases**。
+
 ## 它做了什么
 
 - **试射校对**：AI 对同一目标的头几发误差较大（打远/打近），随后逐发收拢——保留游戏原有的"校射"手感。
@@ -17,7 +26,7 @@
 2. 双击 **`Mod Manager.exe`**（自带 Python，不需要安装别的东西）。
 3. 点 **Install mod loader**，等到底部出现 `Installed and verified … loader files`。
    - 国内下载失败时：先用浏览器把 **BepInEx be.788** 和 **Sprocket 兼容补丁** 两个原始 zip 下好放进"下载"文件夹，再点一次按钮（Mod Manager 会自动采用并校验）。
-4. 点 **Add mod** → 选 `Sprocket.AiDispersion-1.0.0.zip` → 在列表里文件上**双击**启用。
+4. 点 **Add mod** → 选上一步下载的 `Sprocket.AiDispersion.dll`（或 `.zip`）→ 在列表里**双击**启用。
 5. 点 **Launch**。首次启动慢 1~3 分钟（在生成 interop），之后正常。
 
 > ⚠️ 不要另外再装一套官方 BepInEx。Sprocket 必须用 **be.788 + 社区兼容补丁**，否则启动会黑屏——Mod Manager 的 `Install mod loader` 会处理这件事。

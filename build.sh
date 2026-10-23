@@ -21,9 +21,9 @@ echo "Using: $("$DOTNET" --version)"
 "$DOTNET" build "$PROJ" -c Release "$@"
 
 DLL="$HERE/src/SprocketAiDispersion/bin/Release/net6.0/Sprocket.AiDispersion.dll"
-mkdir -p "$HERE/dist"
-cp -f "$DLL" "$HERE/dist/"
+mkdir -p "$HERE/release"
+cp -f "$DLL" "$HERE/release/"
 
 echo
-echo "Built: $HERE/dist/Sprocket.AiDispersion.dll"
+echo "Built: $HERE/release/Sprocket.AiDispersion.dll"
 echo "Install with: ./install.sh"
