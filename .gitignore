@@ -1,14 +1,9 @@
 # 第三方加载器缓存（93MB，含 LGPL 补丁包，禁止分发）
 third_party/
 
-# 构建产物
+# 构建产物 / 本机备份（发布包走 GitHub Releases 附件，不进仓库）
 src/*/bin/
 src/*/obj/
 *.user
-
-# 本机备份 / 发布二进制（发布用 GitHub Releases 附件，不进仓库）
 backup/
-dist/*.zip
-dist/*.dll
-dist/*.sha256
-dist/校验值.txt
+dist/
